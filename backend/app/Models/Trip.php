@@ -11,6 +11,15 @@ class Trip extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'is_started' => 'boolean',
+        'is_complete' => 'boolean',
+        'origin' => 'array',
+        'destination' => 'array',
+        'destination_name' => 'string',
+        'driver_location' => 'array'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
